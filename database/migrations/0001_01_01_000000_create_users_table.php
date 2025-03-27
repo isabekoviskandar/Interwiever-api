@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->enum('auth_provider', ['google','github'])->change();
             $table->rememberToken();
             $table->timestamps();
         });
