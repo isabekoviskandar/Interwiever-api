@@ -15,4 +15,9 @@ class Category extends Model
         'name',
         'is_active',
     ];
+
+    public function interview()
+    {
+        return $this->hasMany(Interview::class , 'category_id');
+    }
 }
