@@ -46,4 +46,14 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function user_interview()
+    {
+        return $this->hasMany(UserInterview::class , 'user_id');
+    }
+
+    public function feedback()
+    {
+        return $this->hasMany(Feedback::class , 'user_id');
+    }
 }

@@ -23,4 +23,9 @@ class Interview extends Model
     {
         return $this->belongsTo(Category::class , 'category_id');
     }
+
+    public function feedback()
+    {
+        return $this->hasMany(Feedback::class , 'interview_id');
+    }
 }
